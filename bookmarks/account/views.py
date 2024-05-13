@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login,authenticate
 from .forms import LoginForms
 
+
 # Create your views here.
 
 # user login view
