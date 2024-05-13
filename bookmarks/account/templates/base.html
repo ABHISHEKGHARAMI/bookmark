@@ -30,10 +30,17 @@
         <span class="user">
           {% if request.user.is_authenticated %}
              hello {{ request.user.firstname | default:request.user.username }},
-             <form action="{% url 'logout' %}" method="post" style="display: inline;">
+             <form id="logoutForm" action="{% url 'logout' %}" method="post" style="display: inline;">
                {% csrf_token %}
                <button type="submit" style="border: none; background: none; padding: 0; text-decoration: underline; cursor: pointer;">Logout</button>
             </form>
+            <script>
+            // JavaScript to submit the form when the button is clicked
+              document.getElementById("logoutForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                this.submit(); // Submit the form
+            });
+           </script>
           {% else %}
              <a href="{% url "login" %}">Login</a>
           {% endif %}
