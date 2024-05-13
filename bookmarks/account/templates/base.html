@@ -30,7 +30,10 @@
         <span class="user">
           {% if request.user.is_authenticated %}
              hello {{ request.user.firstname | default:request.user.username }},
-             <a href="{% url "logout" %}">Logout</a>
+             <form action="{% url 'logout' %}" method="post" style="display: inline;">
+               {% csrf_token %}
+               <button type="submit" style="border: none; background: none; padding: 0; text-decoration: underline; cursor: pointer;">Logout</button>
+            </form>
           {% else %}
              <a href="{% url "login" %}">Login</a>
           {% endif %}
