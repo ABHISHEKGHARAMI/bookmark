@@ -16,7 +16,7 @@
         <span class="logo">Bookmarks</span>
         {% if request.user.is_authenticated %}
            <ul class="menu">
-           <li {% if section == "dashboard"  %}clas="selected"{% endif %}>
+           <li {% if section == "dashboard"  %}class="selected"{% endif %}>
             <a href="{% url "dashboard" %}">My dashboard</a>
            </li {% if section == "image" %}class="selected"{% endif %}>
             <a href="#">Image</a>
