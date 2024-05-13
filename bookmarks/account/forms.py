@@ -7,3 +7,5 @@ class LoginForms(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
     
     
+# super user name- hunter001 pass - Abhi1998@
+    
