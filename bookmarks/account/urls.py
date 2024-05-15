@@ -23,7 +23,7 @@ urlpatterns = [
     
     # resetting the password reset
     path('password-reset/',
-         auth_views.PasswordResetView.as_views(),
+         auth_views.PasswordResetView.as_view(),
          name='password_reset'),
     
     
