@@ -44,4 +44,5 @@ urlpatterns = [
     
     # adding the dashboard
     path('',views.dashboard,name='dashboard'),
+    # password Abhi1998 pass Abhi1998@
 ]
