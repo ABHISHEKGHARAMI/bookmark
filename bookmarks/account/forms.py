@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 
 class LoginForms(forms.Form):
     
@@ -8,4 +9,27 @@ class LoginForms(forms.Form):
     
     
 # super user name- hunter001 pass - Abhi1998@
+
+
+
+# class for the user registration form for new user signup
+class UserRegistrationForm(forms.ModelForm):
+    
+    password1 = forms.CharField(label='Password',
+                                widget=forms.PasswordInput)
+    
+    password2 = forms.CharField(label='Repeat password',
+                                widget=forms.PasswordInput)
+    
+    class Meta:
+        model = User
+        fields = ['username','firstname','email']
+        
+    # method for checking the two password is same or not
+    def clean_password2(self):
+        cd = self.cleaned_data
+        if cd['password1'] != cd['password2']:
+            raise forms.ValidationError('password does not match!!')
+        return cd['password2']
+            
     
