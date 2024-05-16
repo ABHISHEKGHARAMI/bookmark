@@ -54,7 +54,7 @@ def register(request):
         # checking the user form is valid
         if user_form.is_valid() :
             # creating the user but dont commit the user
-            print(user_form)
+            #print(user_form)
             new_user = user_form.save(commit=False)
             # check the password for the user
             new_user.set_password(
