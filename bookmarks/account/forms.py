@@ -23,7 +23,7 @@ class UserRegistrationForm(forms.ModelForm):
     
     class Meta:
         model = User
-        fields = ['username','firstname','email']
+        fields = ['username','first_name','email']
         
     # method for checking the two password is same or not
     def clean_password2(self):
