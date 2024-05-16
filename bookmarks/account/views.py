@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import login,authenticate
-from .forms import LoginForms
+from .forms import LoginForms , UserRegistrationForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -45,3 +45,8 @@ def dashboard(request):
             'section' : 'dashboard'
         }
     )
+    
+    
+# register  view for new user
+def register(request):
+    pass
