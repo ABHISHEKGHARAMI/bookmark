@@ -43,6 +43,10 @@ urlpatterns = [
      path('',include('django.contrib.auth.urls')),
     
     # adding the dashboard
-    path('',views.dashboard,name='dashboard'),
+     path('',views.dashboard,name='dashboard'),
     # password Abhi1998 pass Abhi1998@
+    
+    # have to add the new user registration for the registration
+    
+    path('register/',views.register,name="register"),
 ]
