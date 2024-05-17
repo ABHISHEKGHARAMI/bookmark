@@ -49,4 +49,6 @@ urlpatterns = [
     # have to add the new user registration for the registration
     
     path('register/',views.register,name="register"),
+    
+    path('edit/',views.edit,name="edit"),
 ]
