@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import login,authenticate
-from .forms import LoginForms , UserRegistrationForm
+from .forms import LoginForms , UserRegistrationForm , UserEditForm , ProfileEditForm
 from django.contrib.auth.decorators import login_required
 from .models import Profile
 
@@ -89,4 +89,25 @@ def register(request):
     
 @login_required
 def edit(request):
-    pass
+    if request.method == "POST":
+        user_form = UserEditForm(instance = request.user,
+                                 data = request.POST)
+        login_form = ProfileEditForm(instance = request.user.profile,
+                                     data = request.POST,
+                                     files = request.FILES)
+        
+        if user_form.isvalid() and login_form.is_valid():
+            user_form.save()
+            profile_form.save()
+    else:
+        user_form = UserEditForm(instance=request.user)
+        profile_form = ProfileEditForm(instance = request.user.profile)
+        
+    return render(
+        request,
+        'account/edit.html',
+        {
+            'user_form': user_form,
+            'profile_form': profile_form
+        }
+    )
