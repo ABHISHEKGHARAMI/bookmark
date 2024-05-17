@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login,authenticate
 from .forms import LoginForms , UserRegistrationForm
 from django.contrib.auth.decorators import login_required
+from .models import Profile
 
 # Create your views here.
 
@@ -81,3 +82,8 @@ def register(request):
                   {
                       'user_form' : user_form
                   })
+    
+    
+@login_required
+def edit(request):
+    pass
