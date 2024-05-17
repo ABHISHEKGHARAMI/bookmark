@@ -65,6 +65,9 @@ def register(request):
             # saving the password
             new_user.save()
             
+            # after creating the new user have to create the profile
+            Profile.objects.create(user=new_user)
+            
             
             return render(
                 request,
