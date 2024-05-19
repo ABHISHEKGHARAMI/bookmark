@@ -156,4 +156,18 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '891914536757-r698alk9jufa3dnhsor2ltvkjtdpehp7.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 
+# adding the new user profile auto
+
+SOCIAL_AUTH_PIPELINE = [
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+]
+
 
