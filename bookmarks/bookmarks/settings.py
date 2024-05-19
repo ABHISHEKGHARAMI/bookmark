@@ -140,6 +140,7 @@ AUTHENTICATION_BACKENDS = [
     'account.authentication.EmailAuthBackend',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
 
 
@@ -149,3 +150,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '8e9e088ead77a70aa6b95ba4b107b87d'
 
 SOCIAL_AUTH_TWITTER_KEY = 'wu6Yg2jSiKsDsIzlU2of26XH3'
 SOCIAL_AUTH_TWITTER_SECRET = '6yRwINsz7Y4xWFIJkJWBxxlPcNatHzyfKX7e4bRC2betXXQaE5'
+
+
+
