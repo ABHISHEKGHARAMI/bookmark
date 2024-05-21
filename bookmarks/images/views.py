@@ -20,7 +20,7 @@ def image_create(request):
             
             return redirect(new_image.get_absolute_url())
     else:
-        form = ImageCreateForm(data = request.get)
+        form = ImageCreateForm(data = request.GET)
     
     
     #render
