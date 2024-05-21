@@ -11,7 +11,7 @@ class EmailAuthBackend:
             if user.check_password(password):
                 return user
             return None
-        except( User.DoesNotExist,User.MultipleObjectReturned):
+        except (User.DoesNotExist, User.MultipleObjectsReturned):
             return None
         
         
