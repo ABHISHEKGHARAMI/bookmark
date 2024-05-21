@@ -12,6 +12,10 @@ class Image(models.Model):
                              related_name='images_created',
                              on_delete=models.CASCADE)
     
+    user_like = models.ManyToManyField(settings.AUTH_USER_MODEL,
+                                       related_name='images_liked',
+                                       blank=True)
+    
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200,
                             blank=True)
