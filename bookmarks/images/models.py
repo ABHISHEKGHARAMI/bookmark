@@ -13,7 +13,7 @@ class Image(models.Model):
                              related_name='images_created',
                              on_delete=models.CASCADE)
     
-    user_like = models.ManyToManyField(settings.AUTH_USER_MODEL,
+    users_like = models.ManyToManyField(settings.AUTH_USER_MODEL,
                                        related_name='images_liked',
                                        blank=True)
     
