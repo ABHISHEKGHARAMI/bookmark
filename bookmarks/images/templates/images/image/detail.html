@@ -57,7 +57,15 @@
        fetch(url, options).then(response => response.json()).then(data => {
          if (data['status'] === 'ok')
           {
-          
+            var previousAction = likeButton.dataset.action;
+            // toggle button text and data-action
+            var action = previousAction === 'like' ? 'unlike' : 'like';
+            likeButton.dataset.action = action;
+            likeButton.innerHTML = action;
+            // update like count
+            var likeCount = document.querySelector('span.count .total');
+            var totalLikes = parseInt(likeCount.innerHTML);
+            likeCount.innerHTML = previousAction === 'like' ? totalLikes + 1 :totalLikes - 1;
           }
          })
        });
