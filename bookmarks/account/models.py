@@ -19,3 +19,31 @@ class Profile(models.Model):
     
     def __str__(self):
         return f'Profile of {self.user.username}'
+    
+    
+
+
+# model for the contact
+class Contact(models.Model):
+    #here goes the property.
+    user_form = models.ForeignKey('auth.User',
+                                  related_name = 'rel_from_set',
+                                  on_delete=models.CASCADE)
+    
+    user_to = models.ForeignKey('auth.User',
+                                related_name = 'rel_from_set',
+                                on_delete = models.CASCADE
+                                )
+    created = models.DateTimeField(auto_now_add=True)
+    
+    
+    # meta class
+    class Meta:
+        indexes = [
+            models.Index(fields=['-created']),
+        ]
+        ordering = ['-created']
+    
+    
+    def __str__(self):
+        return f"{self.user_form} follows {self.user_to}"
