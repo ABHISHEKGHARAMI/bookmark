@@ -51,6 +51,6 @@ urlpatterns = [
     path('register/',views.register,name="register"),
     
     path('edit/',views.edit,name="edit"),
-    path('user/',views.user_list,name='user_list'),
-    path('user/<username>/',views.user_detail,name='user_detail'),
+    path('users/',views.user_list,name='user_list'),
+    path('users/<username>/',views.user_detail,name='user_detail'),
 ]
