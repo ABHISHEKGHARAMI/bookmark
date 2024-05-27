@@ -27,3 +27,14 @@
     </a>
  {% endwith %}
 {% endblock %}
+
+{% block domready %}
+
+ var const = '{% url "user_follow" %}'
+ var options = {
+    method : "POST",
+    headers : { 'X-CSRFToken':csrftoken} ,
+    mode : 'same-origin'
+ }
+
+{% endblock %}
