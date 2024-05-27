@@ -6,7 +6,7 @@
 
  <h1>{{ user.get_full_name }}</h1>
  <div class="profile-info">
-   <img src="{% thumbnail user.profile.photo 180x100 %}">
+   <img src="{% thumbnail user.profile.photo 180x180  %}">
  </div>
  {% with total_followers=user.followers.count %}
     <span class="count">
