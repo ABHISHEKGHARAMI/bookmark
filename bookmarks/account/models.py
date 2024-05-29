@@ -27,7 +27,7 @@ class Profile(models.Model):
 # model for the contact
 class Contact(models.Model):
     #here goes the property.
-    user_form = models.ForeignKey('auth.User',
+    user_from = models.ForeignKey('auth.User',
                                   related_name = 'rel_from_set',
                                   on_delete=models.CASCADE)
     
