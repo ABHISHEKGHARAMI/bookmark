@@ -1,4 +1,5 @@
 from django.db import models
+
 from django.contrib.contenttypes.models import ContentType
 from django.contenttypes.fields import GenericForeignkey
 
