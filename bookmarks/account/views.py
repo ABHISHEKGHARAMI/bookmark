@@ -76,6 +76,7 @@ def register(request):
             
             # after creating the new user have to create the profile
             Profile.objects.create(user=new_user)
+            create_action(new_user,'has created an account')
             
             
             return render(
