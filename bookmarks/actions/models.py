@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.contenttypes.models import ContentType
+from django.contenttypes.fields import GenericForeignkey
 
 # Create your models here.
 class Actions(models.Model):
