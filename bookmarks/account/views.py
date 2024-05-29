@@ -167,7 +167,7 @@ def user_follow(request):
                )
             else:
                 Contact.objects.filter(
-                    user_form=request.user,
+                    user_from=request.user,
                     user_to=user
                 ).delete()
             return JsonResponse(
